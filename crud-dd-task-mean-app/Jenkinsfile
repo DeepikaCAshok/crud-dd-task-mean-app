@@ -2,11 +2,9 @@ pipeline {
     agent any
 
     environment {
-        // Docker Hub repos
         DOCKERHUB_BACKEND = "deepikaashok/mean-backend"
         DOCKERHUB_FRONTEND = "deepikaashok/mean-frontend"
 
-        // App EC2 (Docker + Nginx server)
         SSH_HOST = "44.200.190.21"
         SSH_USER = "ubuntu"
     }
@@ -21,7 +19,7 @@ pipeline {
         stage('Build Backend Image') {
             steps {
                 sh """
-                  docker build -t ${DOCKERHUB_BACKEND}:latest ./backend
+                  docker build -t ${DOCKERHUB_BACKEND}:latest ./crud-dd-task-mean-app/backend
                 """
             }
         }
@@ -29,7 +27,7 @@ pipeline {
         stage('Build Frontend Image') {
             steps {
                 sh """
-                  docker build -t ${DOCKERHUB_FRONTEND}:latest ./frontend
+                  docker build -t ${DOCKERHUB_FRONTEND}:latest ./crud-dd-task-mean-app/frontend
                 """
             }
         }
@@ -55,6 +53,7 @@ pipeline {
                       ssh -o StrictHostKeyChecking=no ${SSH_USER}@${SSH_HOST} '
                         cd /opt/mean-app/crud-dd-task-mean-app &&
                         git pull &&
+                        cd crud-dd-task-mean-app &&
                         sudo docker-compose pull &&
                         sudo docker-compose up -d
                       '
@@ -64,3 +63,4 @@ pipeline {
         }
     }
 }
+
