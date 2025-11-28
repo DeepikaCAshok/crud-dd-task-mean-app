@@ -139,13 +139,17 @@ sudo mkdir -p /opt/mean-app
 sudo chown $USER:$USER /opt/mean-app
 cd /opt/mean-app
 ```
+
 <img width="959" height="472" alt="image" src="https://github.com/user-attachments/assets/ea59c0f2-6ff6-4eca-928e-24e21db65544" />
+
 
 ### 4️⃣ Clone project
 ```bash
 git clone https://github.com/DeepikaCAshok/crud-dd-task-mean-app.git
 ```
+
 <img width="959" height="472" alt="image" src="https://github.com/user-attachments/assets/eb2ac7cd-fe24-4bd0-8495-fad8ea12c356" />
+
 
 ### 5️⃣ Run using Docker Compose
 ```bash
@@ -157,9 +161,11 @@ docker-compose up -d
 **Open in browser:**
 
 👉 **Frontend:** [http://44.200.190.21](http://44.200.190.21)
+
 <img width="958" height="473" alt="image" src="https://github.com/user-attachments/assets/06cef6db-cb64-466e-bfd9-ef2b09d9752e" />
 
 👉 **Backend API:** [http://44.200.190.21/api](http://44.200.190.21/api)
+
 <img width="958" height="476" alt="image" src="https://github.com/user-attachments/assets/bf9c0867-fa03-4191-854c-e254128ae492" />
 
 
@@ -201,6 +207,7 @@ server {
     }
 }
   ```
+
 <img width="950" height="470" alt="image" src="https://github.com/user-attachments/assets/23b63861-4b08-420d-9bc1-600a23231064" />
 
 **Enable config**
@@ -210,6 +217,7 @@ sudo ln -s /etc/nginx/sites-available/mean-app /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl restart nginx
  ```
+
 <img width="946" height="474" alt="image" src="https://github.com/user-attachments/assets/bd40ab65-bd31-4a48-ad58-9a31f2c70a07" />
 
 ## 🔄 6. CI/CD Pipeline (Jenkins)
@@ -258,6 +266,7 @@ ID: dockerhub
 Username: YOUR_DOCKERHUB_USERNAME
 Password: YOUR_DOCKERHUB_PASSWORD
 ```
+
 <img width="959" height="475" alt="image" src="https://github.com/user-attachments/assets/77550282-d19d-4f27-a1af-dfae05768599" />
 
 ### B. Add SSH Key Credentials (for App Server Deployment)
@@ -272,6 +281,7 @@ ID: app-ec2-ssh
 Username: ubuntu
 Private Key: (Paste your EC2 .pem file content)
 ```
+
 <img width="959" height="472" alt="image" src="https://github.com/user-attachments/assets/8d9156e5-cff7-4ae1-85bc-133d630f770e" />
 
 ### C. Enable Webhook Trigger for CI/CD
@@ -302,6 +312,7 @@ Payload URL: http://<JENKINS_PUBLIC_IP>/github-webhook/
 Content Type: application/json
 Triggers: Just the push event
 ```
+
 <img width="955" height="473" alt="image" src="https://github.com/user-attachments/assets/21eef4d1-2058-42e0-8489-a822901977b8" />
 
 ## 🚀 9. Jenkinsfile Overview
