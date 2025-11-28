@@ -2,9 +2,11 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_BACKEND = "deepikaashok/mean-backend"
+        // Docker Hub repos
+        DOCKERHUB_BACKEND  = "deepikaashok/mean-backend"
         DOCKERHUB_FRONTEND = "deepikaashok/mean-frontend"
 
+        // App EC2 (Docker + Nginx server)
         SSH_HOST = "44.200.190.21"
         SSH_USER = "ubuntu"
     }
@@ -38,7 +40,7 @@ pipeline {
             }
             steps {
                 sh """
-                  echo $DOCKERHUB_PSW | docker login -u $DOCKERHUB_USR --password-stdin
+                  echo "\$DOCKERHUB_PSW" | docker login -u "\$DOCKERHUB_USR" --password-stdin
 
                   docker push ${DOCKERHUB_BACKEND}:latest
                   docker push ${DOCKERHUB_FRONTEND}:latest
@@ -63,4 +65,3 @@ pipeline {
         }
     }
 }
-
