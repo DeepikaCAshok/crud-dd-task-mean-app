@@ -50,12 +50,11 @@ pipeline {
 
         stage('Deploy to App Server') {
             steps {
-                sshagent(credentials: ['app-ec2-ssh']) {
+                sshagent(credentials: ['ubuntu']) {
                     sh """
                       ssh -o StrictHostKeyChecking=no ${SSH_USER}@${SSH_HOST} '
                         cd /opt/mean-app/crud-dd-task-mean-app &&
                         git pull &&
-                        cd crud-dd-task-mean-app &&
                         sudo docker-compose pull &&
                         sudo docker-compose up -d
                       '
