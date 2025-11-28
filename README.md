@@ -96,6 +96,10 @@ crud-dd-task-mean-app/
 - Docker Hub credentials added in Jenkins
 - SSH key added for App server login
 - GitHub Webhook configured
+  
+  <img width="959" height="450" alt="image" src="https://github.com/user-attachments/assets/ec5cb1ef-36b1-431e-84c9-a7ce175b9251" />
+  
+  <img width="959" height="472" alt="image" src="https://github.com/user-attachments/assets/c40ed529-50b7-4390-a562-094658815eba" />
 
 ### B. App Server (Deployment Server)
 
@@ -103,6 +107,12 @@ crud-dd-task-mean-app/
 - Docker & Docker Compose installed
 - Nginx installed
 - /opt/mean-app created for deployment
+- 
+<img width="959" height="473" alt="image" src="https://github.com/user-attachments/assets/d544ada1-587b-4285-b843-78d8fe3010dc" />
+
+<img width="959" height="472" alt="image" src="https://github.com/user-attachments/assets/ea59c0f2-6ff6-4eca-928e-24e21db65544" />
+
+  
 ## 🖥️ 4. App Server Setup (Ubuntu EC2)
 
 (must perform these steps on the app server, NOT Jenkins server.)
@@ -129,15 +139,21 @@ sudo mkdir -p /opt/mean-app
 sudo chown $USER:$USER /opt/mean-app
 cd /opt/mean-app
 ```
+<img width="959" height="472" alt="image" src="https://github.com/user-attachments/assets/ea59c0f2-6ff6-4eca-928e-24e21db65544" />
+
 ### 4️⃣ Clone project
 ```bash
 git clone https://github.com/DeepikaCAshok/crud-dd-task-mean-app.git
 ```
+<img width="959" height="472" alt="image" src="https://github.com/user-attachments/assets/eb2ac7cd-fe24-4bd0-8495-fad8ea12c356" />
+
 ### 5️⃣ Run using Docker Compose
 ```bash
 cd crud-dd-task-mean-app
 docker-compose up -d
 ```
+<img width="959" height="472" alt="image" src="https://github.com/user-attachments/assets/5bddac25-c351-40be-900a-69b256973073" />
+
 **Open in browser:**
 
 👉 **Frontend:** [http://44.200.190.21](http://44.200.190.21)
@@ -200,6 +216,7 @@ sudo systemctl restart nginx
 ✔️ **Jenkinsfile included in repo:**
 
 **The pipeline automatically:**
+
 1️⃣ Checks out GitHub code
 
 2️⃣ Builds Backend Docker image
@@ -223,6 +240,9 @@ sudo systemctl restart nginx
 <img width="959" height="473" alt="image" src="https://github.com/user-attachments/assets/7268326f-8b3e-46a8-b296-102669607c2b" />
 
 <img width="957" height="473" alt="image" src="https://github.com/user-attachments/assets/b5f39329-222b-4075-b760-2911a22ebcc4" />
+
+<img width="947" height="466" alt="image" src="https://github.com/user-attachments/assets/c7454d11-1201-4b71-b19d-e358dac35fb7" />
+
 
 ## 🔧 7. Jenkins Configuration
 
@@ -320,3 +340,32 @@ Triggers: Just the push event
 [http://44.200.190.21/api/](http://44.200.190.21/api/)
 
 <img width="958" height="476" alt="image" src="https://github.com/user-attachments/assets/2ab0bc9d-f3c4-408a-be96-17390b7b87b5" />
+
+## 🎉 11. Assignment Status
+
+**All required tasks implemented:**
+
+✔ Dockerized MEAN app
+
+✔ Docker Compose deployment
+
+✔ Jenkins CI/CD pipeline
+
+✔ Docker Hub image push
+
+✔ Auto deployment to VM
+
+✔ Nginx reverse proxy
+
+✔ Webhook-based automation
+
+✔ Professional README
+
+**Author**
+
+**Deepika C A**
+
+**Docker | Jenkins | CI/CD | Cloud Deployment**
+
+
+
